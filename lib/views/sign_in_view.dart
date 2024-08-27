@@ -44,41 +44,41 @@ class SignInView extends StatelessWidget {
               //button
               CustomButton(
                 buttomText: 'الدخول',
-                onTap: () {
-                  Navigator.pushReplacementNamed(context, 'SignUpView');
-                },
+                onTap: () {},
               ),
               // ليس لديك حساب
               GestureDetector(
+                  onTap: () => Navigator.pushReplacementNamed(context, 'SignUpView'),
                   child: const Text(
-                ' ليس لديك حساب ؟',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 18,
-                ),
-              )),
+                    ' ليس لديك حساب ؟',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  )),
               // تسجيل حساب جديد
               GestureDetector(
+                  onTap: () => Navigator.pushReplacementNamed(context, 'SignUpView'),
                   child: const Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                      top: 35,
-                    ),
-                  ),
-                  Icon(
-                    Icons.arrow_back,
-                    color: Color.fromRGBO(29, 117, 177, 1),
-                  ),
-                  Text(
-                    'تسجيل حساب جديد',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18, color: Color.fromRGBO(29, 117, 177, 1)),
-                  )
-                ],
-              ))
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: 35,
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_back,
+                        color: Color.fromRGBO(29, 117, 177, 1),
+                      ),
+                      Text(
+                        'تسجيل حساب جديد',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 18, color: Color.fromRGBO(29, 117, 177, 1)),
+                      )
+                    ],
+                  ))
             ],
           ),
         ),

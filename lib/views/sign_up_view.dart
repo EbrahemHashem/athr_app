@@ -50,26 +50,27 @@ class SignUpView extends StatelessWidget {
                   )),
               // تسجيل الدخول
               GestureDetector(
+                  onTap: () => Navigator.pushReplacementNamed(context, 'SignInView'),
                   child: const Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                      top: 35,
-                    ),
-                  ),
-                  Icon(
-                    Icons.arrow_back,
-                    color: Color.fromRGBO(29, 117, 177, 1),
-                  ),
-                  Text(
-                    'تسجيل الدخول',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18, color: Color.fromRGBO(29, 117, 177, 1)),
-                  )
-                ],
-              ))
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: 35,
+                        ),
+                      ),
+                      Icon(
+                        Icons.arrow_back,
+                        color: Color.fromRGBO(29, 117, 177, 1),
+                      ),
+                      Text(
+                        'تسجيل الدخول',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 18, color: Color.fromRGBO(29, 117, 177, 1)),
+                      )
+                    ],
+                  ))
             ],
           ),
         ),
