@@ -2,8 +2,8 @@ import 'package:athr_app/widgets/custom_button.dart';
 import 'package:athr_app/widgets/custom_form_field.dart';
 import 'package:flutter/material.dart';
 
-class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({super.key});
+class NewPassword extends StatelessWidget {
+  const NewPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +14,11 @@ class ForgetPassword extends StatelessWidget {
           child: ListView(
             children: [
               // image
-              Image.asset('assets/sms-notification.png'),
+              Image.asset('assets/eye_unlock_twotone.png'),
               //
               const Text(
-                'هل نسيت كلمة المرور ؟',
+                'كلمة المرور الجديدة',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -27,24 +28,32 @@ class ForgetPassword extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 10),
                 child: Text(
                   textAlign: TextAlign.center,
-                  "قم بإدخال بريدك الإلكتروني لإرسال كود التحقق ",
+                  'قم بتعيين كلمة المرور الجديدة الخاصة بحسابك',
                   style: TextStyle(
                     fontSize: 18,
                   ),
                 ),
               ),
-              // email
+              // password
               CustomFormField(
-                textInput: TextInputType.emailAddress,
-                icon: const Icon(Icons.sms_outlined),
-                hintText: 'أدخل البريد الالكتروني',
+                textInput: TextInputType.visiblePassword,
+                hintText: 'كلمة المرور الجديدة',
+                icon: const Icon(Icons.lock_open_outlined),
+                preIcon: Icons.visibility_outlined,
+              ),
+              // password
+              CustomFormField(
+                textInput: TextInputType.visiblePassword,
+                hintText: 'تأكيد كلمة المرور الجديدة',
+                icon: const Icon(Icons.lock_open_outlined),
+                preIcon: Icons.visibility_outlined,
               ),
 
               //button
               CustomButton(
-                buttomText: 'ارسال',
+                buttomText: 'تأكيد',
                 onTap: () {
-                  Navigator.pushReplacementNamed(context, 'ActivitionCodeView');
+                  // Navigator.pushReplacementNamed(context, 'ActivitionCodeView');
                 },
               ),
             ],

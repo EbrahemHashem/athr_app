@@ -22,14 +22,14 @@ class SignInView extends StatelessWidget {
               // email
               CustomFormField(
                 textInput: TextInputType.emailAddress,
-                icon: Icons.sms_outlined,
+                icon: const Icon(Icons.sms_outlined),
                 hintText: 'أدخل البريد الالكتروني',
               ),
               // password
               CustomFormField(
                 textInput: TextInputType.visiblePassword,
                 hintText: 'أدخل كلمة المرور',
-                icon: Icons.lock_open_outlined,
+                icon: const Icon(Icons.lock_open_outlined),
                 preIcon: Icons.visibility_outlined,
               ),
               //forget password

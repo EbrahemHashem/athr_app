@@ -22,7 +22,7 @@ class SignUpView extends StatelessWidget {
               // email
               CustomFormField(
                 textInput: TextInputType.emailAddress,
-                icon: Icons.sms_outlined,
+                icon: const Icon(Icons.sms_outlined),
                 hintText: 'أدخل البريد الالكتروني',
               ),
 

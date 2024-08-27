@@ -63,6 +63,8 @@ flutter:
     - assets/bakr.png
     - assets/splash bakr.png
     - assets/sms-notification.png
+    - assets/star group.png
+    - assets/eye_unlock_twotone.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

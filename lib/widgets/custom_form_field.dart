@@ -4,11 +4,12 @@ import 'package:athr_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomFormField extends StatelessWidget {
-  CustomFormField({super.key, required this.textInput, this.onChanged, required this.hintText, required this.icon, this.preIcon});
+  CustomFormField({super.key, required this.textInput, this.onChanged, required this.hintText, required this.icon, this.preIcon, this.ontap});
   String hintText;
   TextInputType textInput;
-  IconData icon;
+  Icon icon;
   IconData? preIcon;
+  void Function()? ontap;
 
   Function(String)? onChanged;
 
@@ -29,10 +30,11 @@ class CustomFormField extends StatelessWidget {
           keyboardType: textInput,
           decoration: InputDecoration(
             suffixIcon: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Icon(
-                  icon,
-                  size: 24,
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: IconButton(
+                  onPressed: ontap ?? () {},
+                  icon: icon,
+                  iconSize: 24,
                 )),
             prefixIcon: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
