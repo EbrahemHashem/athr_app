@@ -1,5 +1,7 @@
 import 'package:athr_app/views/activition_code_view.dart';
 import 'package:athr_app/views/forget_password.dart';
+import 'package:athr_app/views/full_sign_up_view.dart';
+import 'package:athr_app/views/home_page.dart';
 import 'package:athr_app/views/new_password_view.dart';
 import 'package:athr_app/views/sign_in_view.dart';
 import 'package:athr_app/views/sign_up_view.dart';
@@ -22,6 +24,8 @@ class AthrApp extends StatelessWidget {
         'ForgetPassword': (context) => const ForgetPassword(),
         'ActivitionCodeView': (context) => const ActivitionCodeView(),
         'NewPassword': (context) => const NewPassword(),
+        'FullSignUp': (context) => const FullSignUp(),
+        'HomePage': (context) => const HomePage(),
       },
       theme: ThemeData(fontFamily: 'Almarai'),
       debugShowCheckedModeBanner: false,

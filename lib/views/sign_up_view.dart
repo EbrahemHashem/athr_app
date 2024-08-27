@@ -30,7 +30,7 @@ class SignUpView extends StatelessWidget {
               CustomButton(
                 buttomText: 'تسجيل',
                 onTap: () {
-                  // Navigator.pushReplacementNamed(context, 'SignUpView');
+                  Navigator.pushReplacementNamed(context, 'FullSignUp');
                 },
               ),
               const SizedBox(
