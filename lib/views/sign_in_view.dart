@@ -34,7 +34,7 @@ class SignInView extends StatelessWidget {
               ),
               //forget password
               GestureDetector(
-                onTap: () {},
+                onTap: () => Navigator.pushNamed(context, 'ForgetPassword'),
                 child: const Text(
                   'هل نسيت كلمة المرور ؟ ',
                   textAlign: TextAlign.center,

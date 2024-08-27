@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ActivitionCode extends StatelessWidget {
-  const ActivitionCode({super.key});
+class ActivitionCodeView extends StatelessWidget {
+  const ActivitionCodeView({super.key});
 
   @override
   Widget build(BuildContext context) {
