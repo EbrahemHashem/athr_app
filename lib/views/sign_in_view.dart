@@ -10,7 +10,7 @@ class SignInView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(right: 33, left: 33, top: 50),
+        padding: const EdgeInsets.only(right: 33, left: 33, top: 85),
         child: Form(
           child: ListView(
             children: [
@@ -42,7 +42,12 @@ class SignInView extends StatelessWidget {
                 ),
               ),
               //button
-              CustomButton(buttomText: 'الدخول'),
+              CustomButton(
+                buttomText: 'الدخول',
+                onTap: () {
+                  Navigator.pushReplacementNamed(context, 'SignUpView');
+                },
+              ),
               // ليس لديك حساب
               GestureDetector(
                   child: const Text(
