@@ -16,7 +16,7 @@ class Top extends StatelessWidget {
       Text(
         text1,
         style: const TextStyle(
-          fontSize: 25,
+          fontSize: 23,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -26,7 +26,7 @@ class Top extends StatelessWidget {
           textAlign: TextAlign.center,
           text2,
           style: const TextStyle(
-            fontSize: 18,
+            fontSize: 16,
           ),
         ),
       ),

@@ -42,21 +42,19 @@ class ActivitionCodeView extends StatelessWidget {
               CustomButton(
                 buttomText: 'تحقق',
                 onTap: () {
-                  Navigator.pushReplacementNamed(context, 'NewPassword');
+                  Navigator.pushReplacementNamed(context, 'FullSignUp');
                 },
               ),
-              GestureDetector(
-                  onTap: () => Navigator.pushReplacementNamed(context, 'SignUpView'),
-                  child: const Text(
-                    'لم يتم إرسال كود التحقق ؟',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  )),
+              const Text(
+                'لم يتم إرسال كود التحقق ؟',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
               //أرسل الكود مرة أخرى
               GestureDetector(
-                  onTap: () {},
+                  onTap: () => Navigator.pushReplacementNamed(context, 'ForgetPassword'),
                   child: const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

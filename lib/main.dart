@@ -1,3 +1,4 @@
+import 'package:athr_app/firebase_options.dart';
 import 'package:athr_app/views/activition_code_view.dart';
 import 'package:athr_app/views/forget_password.dart';
 import 'package:athr_app/views/full_sign_up_view.dart';
@@ -6,9 +7,15 @@ import 'package:athr_app/views/new_password_view.dart';
 import 'package:athr_app/views/sign_in_view.dart';
 import 'package:athr_app/views/sign_up_view.dart';
 import 'package:athr_app/views/splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  // firebase
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const AthrApp());
 }
 
@@ -19,17 +26,17 @@ class AthrApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        'SignUpView': (context) => const SignUpView(),
-        'SignInView': (context) => const SignInView(),
-        'ForgetPassword': (context) => const ForgetPassword(),
-        'ActivitionCodeView': (context) => const ActivitionCodeView(),
-        'NewPassword': (context) => const NewPassword(),
-        'FullSignUp': (context) => const FullSignUp(),
+        'SignUpView': (context) => SignUpView(),
+        'SignInView': (context) => SignInView(),
+        'ForgetPassword': (context) => ForgetPassword(),
+        'ActivitionCodeView': (context) => ActivitionCodeView(),
+        'NewPassword': (context) => NewPassword(),
+        'FullSignUp': (context) => FullSignUp(),
         'HomePage': (context) => const HomePage(),
       },
       theme: ThemeData(fontFamily: 'Almarai'),
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      home: HomePage(),
     );
   }
 }

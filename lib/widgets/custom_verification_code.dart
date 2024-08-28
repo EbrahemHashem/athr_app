@@ -32,7 +32,7 @@ class CustomContainer extends StatelessWidget {
       width: 60,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        color: kColor,
+        color: const Color.fromARGB(255, 224, 210, 210),
       ),
       child: TextFormField(
         decoration: const InputDecoration(

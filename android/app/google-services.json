@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "587356435411",
+    "project_id": "athr-app-48d80",
+    "storage_bucket": "athr-app-48d80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587356435411:android:582e2a37a02ab80d28b526",
+        "android_client_info": {
+          "package_name": "com.example.athr_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1YP8DjiBqzCV7APV5Yh71kCcdcpgHPRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

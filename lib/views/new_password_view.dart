@@ -1,16 +1,19 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:athr_app/widgets/custom_button.dart';
 import 'package:athr_app/widgets/custom_form_field.dart';
 import 'package:flutter/material.dart';
 
 class NewPassword extends StatelessWidget {
-  const NewPassword({super.key});
-
+  NewPassword({super.key});
+  GlobalKey<FormState> formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(right: 33, left: 33),
         child: Form(
+          key: formKey,
           child: ListView(
             children: [
               // image
@@ -20,7 +23,7 @@ class NewPassword extends StatelessWidget {
                 'كلمة المرور الجديدة',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 22,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -30,7 +33,7 @@ class NewPassword extends StatelessWidget {
                   textAlign: TextAlign.center,
                   'قم بتعيين كلمة المرور الجديدة الخاصة بحسابك',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                   ),
                 ),
               ),
@@ -53,6 +56,7 @@ class NewPassword extends StatelessWidget {
               CustomButton(
                 buttomText: 'تأكيد',
                 onTap: () {
+                  if (formKey.currentState!.validate()) {}
                   // Navigator.pushReplacementNamed(context, 'ActivitionCodeView');
                 },
               ),

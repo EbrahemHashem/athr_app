@@ -1,16 +1,19 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:athr_app/widgets/custom_button.dart';
 import 'package:athr_app/widgets/custom_form_field_without_icon.dart';
 import 'package:flutter/material.dart';
 
 class FullSignUp extends StatelessWidget {
-  const FullSignUp({super.key});
-
+  FullSignUp({super.key});
+  GlobalKey<FormState> formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(right: 33, left: 33),
         child: Form(
+          key: formKey,
           child: ListView(
             children: [
               // image
@@ -27,7 +30,7 @@ class FullSignUp extends StatelessWidget {
                 'إستكمال البيانات',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 22,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -37,7 +40,7 @@ class FullSignUp extends StatelessWidget {
                   textAlign: TextAlign.center,
                   'قم بإستكمال بياناتك الشخصية لتتمكن من تسجيل حسابك',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 17,
                   ),
                 ),
               ),
@@ -53,7 +56,7 @@ class FullSignUp extends StatelessWidget {
               ),
               //phone number
               CustomFormFieldWithoutIcon(
-                textInput: TextInputType.name,
+                textInput: TextInputType.number,
                 hintText: 'رقم الجوال',
               ),
               // password
@@ -72,7 +75,11 @@ class FullSignUp extends StatelessWidget {
               //button
               CustomButton(
                 buttomText: 'تأكيد',
-                onTap: () => Navigator.pushReplacementNamed(context, 'HomePage'),
+                onTap: () {
+                  if (formKey.currentState!.validate()) {
+                    Navigator.pushReplacementNamed(context, 'HomePage');
+                  }
+                },
               ),
             ],
           ),

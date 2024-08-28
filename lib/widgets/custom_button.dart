@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:athr_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -15,9 +16,9 @@ class CustomButton extends StatelessWidget {
         child: Container(
           margin: const EdgeInsets.symmetric(vertical: 35),
           // width: MediaQuery.of(context).size.width,
-          height: 76,
+          height: 70,
           decoration: BoxDecoration(
-            color: Colors.blue,
+            color: kColorBlue,
             borderRadius: BorderRadius.circular(38),
           ),
           child: Center(

@@ -22,7 +22,7 @@ class CustomFormField extends StatelessWidget {
           textAlign: TextAlign.right,
           validator: (data) {
             if (data!.isEmpty) {
-              return 'Field is required';
+              return 'الحقل مطلوب';
             }
             return null;
           },

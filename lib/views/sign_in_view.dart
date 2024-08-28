@@ -1,17 +1,21 @@
+// ignore_for_file: must_be_immutable
+
+import 'package:athr_app/constants.dart';
 import 'package:athr_app/widgets/custom_button.dart';
 import 'package:athr_app/widgets/custom_form_field.dart';
 import 'package:athr_app/widgets/top.dart';
 import 'package:flutter/material.dart';
 
 class SignInView extends StatelessWidget {
-  const SignInView({super.key});
-
+  SignInView({super.key});
+  GlobalKey<FormState> formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(right: 33, left: 33, top: 85),
         child: Form(
+          key: formKey,
           child: ListView(
             children: [
               Top(
@@ -38,13 +42,15 @@ class SignInView extends StatelessWidget {
                 child: const Text(
                   'هل نسيت كلمة المرور ؟ ',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
               ),
               //button
               CustomButton(
                 buttomText: 'الدخول',
-                onTap: () {},
+                onTap: () {
+                  if (formKey.currentState!.validate()) {}
+                },
               ),
               // ليس لديك حساب
               GestureDetector(
@@ -75,7 +81,7 @@ class SignInView extends StatelessWidget {
                       Text(
                         'تسجيل حساب جديد',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18, color: Color.fromRGBO(29, 117, 177, 1)),
+                        style: TextStyle(fontSize: 18, color: kColorBlue),
                       )
                     ],
                   ))

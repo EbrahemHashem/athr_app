@@ -1,25 +1,29 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:athr_app/widgets/custom_button.dart';
 import 'package:athr_app/widgets/custom_form_field.dart';
 import 'package:flutter/material.dart';
 
 class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({super.key});
-
+  ForgetPassword({super.key});
+  GlobalKey<FormState> formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(right: 33, left: 33),
         child: Form(
+          key: formKey,
           child: ListView(
             children: [
               // image
               Image.asset('assets/sms-notification.png'),
               //
               const Text(
+                textAlign: TextAlign.center,
                 'هل نسيت كلمة المرور ؟',
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 22,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -29,7 +33,7 @@ class ForgetPassword extends StatelessWidget {
                   textAlign: TextAlign.center,
                   "قم بإدخال بريدك الإلكتروني لإرسال كود التحقق ",
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                   ),
                 ),
               ),
@@ -42,9 +46,11 @@ class ForgetPassword extends StatelessWidget {
 
               //button
               CustomButton(
-                buttomText: 'ارسال',
+                buttomText: 'إرسال',
                 onTap: () {
-                  Navigator.pushReplacementNamed(context, 'ActivitionCodeView');
+                  if (formKey.currentState!.validate()) {
+                    Navigator.pushReplacementNamed(context, 'ActivitionCodeView');
+                  }
                 },
               ),
             ],
