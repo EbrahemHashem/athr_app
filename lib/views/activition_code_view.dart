@@ -13,7 +13,7 @@ class ActivitionCodeView extends StatelessWidget {
         child: Form(
           child: ListView(
             children: [
-              Image.asset('assets/star group.png'),
+              Image.asset('assets/images/star group.png'),
               const SizedBox(
                 height: 75,
               ),

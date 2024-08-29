@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         ),
         child: Center(
           child: Image.asset(
-            'assets/splash bakr.png',
+            'assets/images/splash bakr.png',
           ),
         ),
       ),

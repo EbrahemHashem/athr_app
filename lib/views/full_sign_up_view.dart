@@ -22,7 +22,7 @@ class FullSignUp extends StatelessWidget {
                 width: 100,
                 margin: const EdgeInsets.only(bottom: 10, top: 20),
                 child: Image.asset(
-                  'assets/user.png',
+                  'assets/images/user.png',
                 ),
               ),
 

@@ -47,7 +47,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/bakr.png"
+  image_path: "assets/images/bakr.png"
 
 
 
@@ -78,6 +78,8 @@ flutter:
     # - assets/star group.png
     # - assets/eye_unlock_twotone.png
     - assets/
+    - assets/images/
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

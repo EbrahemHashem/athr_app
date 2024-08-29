@@ -17,7 +17,7 @@ class ForgetPassword extends StatelessWidget {
           child: ListView(
             children: [
               // image
-              Image.asset('assets/sms-notification.png'),
+              Image.asset('assets/images/sms-notification.png'),
               //
               const Text(
                 textAlign: TextAlign.center,

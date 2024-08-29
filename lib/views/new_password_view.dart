@@ -17,7 +17,7 @@ class NewPassword extends StatelessWidget {
           child: ListView(
             children: [
               // image
-              Image.asset('assets/eye_unlock_twotone.png'),
+              Image.asset('assets/images/eye_unlock_twotone.png'),
               //
               const Text(
                 'كلمة المرور الجديدة',
