@@ -37,7 +37,7 @@ class AthrApp extends StatelessWidget {
       },
       theme: ThemeData(fontFamily: 'Almarai'),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: WallCondition(),
     );
   }
 }
