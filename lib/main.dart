@@ -1,4 +1,3 @@
-import 'package:athr_app/firebase_options.dart';
 import 'package:athr_app/views/activition_code_view.dart';
 import 'package:athr_app/views/forget_password.dart';
 import 'package:athr_app/views/full_sign_up_view.dart';
@@ -7,15 +6,9 @@ import 'package:athr_app/views/new_password_view.dart';
 import 'package:athr_app/views/sign_in_view.dart';
 import 'package:athr_app/views/sign_up_view.dart';
 import 'package:athr_app/views/wall_condition.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() async {
-  // firebase
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+void main() {
   runApp(const AthrApp());
 }
 

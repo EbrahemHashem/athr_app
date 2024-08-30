@@ -1,3 +1,4 @@
+import 'package:athr_app/constants.dart';
 import 'package:athr_app/widgets/home%20page/custom_product.dart';
 import 'package:athr_app/widgets/wall%20condition%20page/custom_bar_wallconditin.dart';
 import 'package:flutter/material.dart';
@@ -8,13 +9,29 @@ class WallCondition extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // floatingActionButton: Builder(builder: (BuildContext context) {
-      //   return FloatingActionButton.extended(
-      //     onPressed: () {},
-      //     label: CustomActionButton(),
-      //     icon: Icon(Icons.add),
-      //   );
-      // }),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: GestureDetector(
+        onTap: () {},
+        child: Container(
+          decoration: BoxDecoration(color: kColorBlue, borderRadius: BorderRadius.circular(38)),
+          width: 260,
+          padding: EdgeInsets.all(22),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'طلب عرض سعر',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              Icon(
+                Icons.add,
+                color: Colors.white,
+                size: 35,
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Padding(
           padding: EdgeInsets.only(right: 15, left: 15, top: 30),
           child: ListView(children: [
