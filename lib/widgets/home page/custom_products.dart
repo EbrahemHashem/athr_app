@@ -13,7 +13,7 @@ class CustomProducts extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: 4,
           itemBuilder: (context, index) {
-            return CustomProduct();
+            return Container(margin: EdgeInsets.only(left: 10), child: CustomProduct());
           }),
     );
   }

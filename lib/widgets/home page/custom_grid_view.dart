@@ -14,9 +14,7 @@ class CustomGridView extends StatelessWidget {
         color: Color(0xffD68426),
         image: 'assets/images/2.png',
         text: 'مكيف اسبلت',
-        onTap: () {
-          Navigator.pushNamed(context, 'WallCondition');
-        },
+        onTap: () {},
       ),
 
       // مكيف جداري'
@@ -24,7 +22,9 @@ class CustomGridView extends StatelessWidget {
         color: kColorBlue,
         image: 'assets/images/1.png',
         text: 'مكيف جداري',
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, 'WallCondition');
+        },
       ),
       //مكيف مخفي
       CustomItem(
@@ -68,7 +68,12 @@ class CustomGridView extends StatelessWidget {
           ),
           itemCount: listItems.length,
           itemBuilder: (context, index) {
-            return CustomItem(color: listItems[index].color, image: listItems[index].image, text: listItems[index].text);
+            return CustomItem(
+              color: listItems[index].color,
+              image: listItems[index].image,
+              text: listItems[index].text,
+              onTap: listItems[index].onTap,
+            );
           }),
     );
   }

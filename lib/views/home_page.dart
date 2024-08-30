@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: Color(0xffFCDDEC),
       bottomNavigationBar: CustomButtomNavigationBar(),
       body: Padding(
-        padding: const EdgeInsets.only(right: 15, left: 15, top: 40),
+        padding: const EdgeInsets.only(right: 15, left: 15, top: 30),
         child: ListView(children: [
           CustomHomeBar(),
           CustomHorizontalSlide(),
