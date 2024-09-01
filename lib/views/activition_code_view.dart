@@ -1,9 +1,12 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:athr_app/widgets/custom_button.dart';
 import 'package:athr_app/widgets/custom_verification_code.dart';
 import 'package:flutter/material.dart';
 
 class ActivitionCodeView extends StatelessWidget {
-  const ActivitionCodeView({super.key});
+  ActivitionCodeView({super.key});
+  GlobalKey<FormState> formKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +14,7 @@ class ActivitionCodeView extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(right: 33, left: 33, top: 85),
         child: Form(
+          key: formKey,
           child: ListView(
             children: [
               Image.asset('assets/images/star group.png'),
@@ -42,7 +46,11 @@ class ActivitionCodeView extends StatelessWidget {
               CustomButton(
                 buttomText: 'تحقق',
                 onTap: () {
-                  Navigator.pushReplacementNamed(context, 'FullSignUp');
+                  // final otp = txt1.tostring + ;
+                  if (formKey.currentState!.validate()) {
+                    // GetCheckOtpService().checkOtp(email: email, otp: otp, context: context);
+                    Navigator.pushReplacementNamed(context, 'FullSignUp');
+                  }
                 },
               ),
               const Text(

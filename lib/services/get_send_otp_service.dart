@@ -25,7 +25,8 @@ class GetSendOtp {
         print('Mesaage : ${sendOtpResponse.message}');
         print('Status : ${sendOtpResponse.status}');
         print('Email : ${sendOtpResponse.data.email}');
-        Navigator.pushNamed(context, 'FullSignUp');
+        // navigation to otp code
+        Navigator.pushNamed(context, 'ActivitionCodeView');
       } else {
         print('Request failed with status: ${response.statusCode}.');
       }
