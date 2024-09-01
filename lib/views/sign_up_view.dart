@@ -1,15 +1,22 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:athr_app/services/get_send_otp_service.dart';
 import 'package:athr_app/widgets/custom_button.dart';
 import 'package:athr_app/widgets/custom_form_field.dart';
 import 'package:athr_app/widgets/top.dart';
-import 'package:email_otp/email_otp.dart';
 import 'package:flutter/material.dart';
 
-class SignUpView extends StatelessWidget {
-  SignUpView({super.key, this.email});
-  String? email;
+class SignUpView extends StatefulWidget {
+  SignUpView({super.key});
+
+  @override
+  State<SignUpView> createState() => _SignUpViewState();
+}
+
+class _SignUpViewState extends State<SignUpView> {
   GlobalKey<FormState> formKey = GlobalKey();
+  String? email;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,20 +44,10 @@ class SignUpView extends StatelessWidget {
               //button
               CustomButton(
                 buttomText: 'تسجيل',
-                onTap: () async {
+                onTap: () {
                   if (formKey.currentState!.validate()) {
-                    EmailOTP.config(
-                      appName: 'bakr conditon',
-                      otpType: OTPType.numeric,
-                      expiry: 30000,
-                      emailTheme: EmailTheme.v6,
-                      appEmail: 'me@bakrcondition.com',
-                      otpLength: 5,
-                    );
-                    EmailOTP.sendOTP(email: email.toString());
-                    if (await EmailOTP.sendOTP(email: email!) == true) {
-                      Navigator.pushReplacementNamed(context, 'ActivitionCodeView');
-                    }
+                    GetSendOtp().sendOtp(email: email!);
+                    print(email);
                   }
                 },
               ),

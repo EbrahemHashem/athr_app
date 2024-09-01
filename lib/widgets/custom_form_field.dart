@@ -4,7 +4,15 @@ import 'package:athr_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomFormField extends StatelessWidget {
-  CustomFormField({super.key, required this.textInput, this.onChanged, required this.hintText, required this.icon, this.preIcon, this.ontap});
+  CustomFormField({
+    super.key,
+    required this.textInput,
+    this.onChanged,
+    required this.hintText,
+    required this.icon,
+    this.preIcon,
+    this.ontap,
+  });
   String hintText;
   TextInputType textInput;
   Icon icon;

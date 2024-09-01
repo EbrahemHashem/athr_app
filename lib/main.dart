@@ -5,6 +5,7 @@ import 'package:athr_app/views/home_page.dart';
 import 'package:athr_app/views/new_password_view.dart';
 import 'package:athr_app/views/sign_in_view.dart';
 import 'package:athr_app/views/sign_up_view.dart';
+import 'package:athr_app/views/splash_screen.dart';
 import 'package:athr_app/views/wall_condition.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class AthrApp extends StatelessWidget {
       },
       theme: ThemeData(fontFamily: 'Almarai'),
       debugShowCheckedModeBanner: false,
-      home: WallCondition(),
+      home: SplashScreen(),
     );
   }
 }

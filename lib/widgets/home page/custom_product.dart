@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:athr_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomProduct extends StatefulWidget {
@@ -21,7 +22,7 @@ class _CustomProductState extends State<CustomProduct> {
             width: 175,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: const Color.fromARGB(255, 147, 48, 48),
+              color: kColor,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,

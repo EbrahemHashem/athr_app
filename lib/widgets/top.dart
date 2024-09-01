@@ -9,7 +9,7 @@ class Top extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Image.asset('assets/bakr.png'),
+      Image.asset('assets/images/bakr.png'),
       const SizedBox(
         height: 50,
       ),
