@@ -1,7 +1,6 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:athr_app/services/get_send_otp_service.dart';
-import 'package:athr_app/services/post_register_service.dart';
 import 'package:athr_app/widgets/custom_button.dart';
 import 'package:athr_app/widgets/custom_form_field.dart';
 import 'package:athr_app/widgets/top.dart';
@@ -48,15 +47,9 @@ class _SignUpViewState extends State<SignUpView> {
                 buttomText: 'تسجيل',
                 onTap: () {
                   if (formKey.currentState!.validate()) {
-                    PostRegisterService().register(email: email!);
-                    Navigator.pushReplacementNamed(context, 'FullSignUp');
-                    // GetSendOtp().sendOtp(email: email!);
-                    // print(Response);
-                    // if(sendOtpResponse.status == 200 ){
+                    GetSendOtp().sendOtp(email: email!, context: context);
 
-                    // }
-
-                    // print(email);
+                    // Navigator.pushReplacementNamed(context, 'FullSignUp');
                   }
                 },
               ),
