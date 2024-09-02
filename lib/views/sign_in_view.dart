@@ -7,9 +7,20 @@ import 'package:athr_app/widgets/custom_form_field.dart';
 import 'package:athr_app/widgets/top.dart';
 import 'package:flutter/material.dart';
 
-class SignInView extends StatelessWidget {
+class SignInView extends StatefulWidget {
   SignInView({super.key});
+
+  @override
+  State<SignInView> createState() => _SignInViewState();
+}
+
+class _SignInViewState extends State<SignInView> {
   GlobalKey<FormState> formKey = GlobalKey();
+
+  String? email;
+
+  String? password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,12 +37,18 @@ class SignInView extends StatelessWidget {
 
               // email
               CustomFormField(
+                onChanged: (data) {
+                  email = data;
+                },
                 textInput: TextInputType.emailAddress,
                 icon: const Icon(Icons.sms_outlined),
                 hintText: 'أدخل البريد الالكتروني',
               ),
               // password
               CustomFormField(
+                onChanged: (data) {
+                  password = data;
+                },
                 textInput: TextInputType.visiblePassword,
                 hintText: 'أدخل كلمة المرور',
                 icon: const Icon(Icons.lock_open_outlined),
@@ -51,7 +68,7 @@ class SignInView extends StatelessWidget {
                 buttomText: 'الدخول',
                 onTap: () {
                   if (formKey.currentState!.validate()) {
-                    PostLoginService().login(email: 'zizorezk@gmail.com', password: '123456789', context: context);
+                    PostLoginService().login(email: email!, password: password!, context: context);
                     print('object');
                   }
                 },
