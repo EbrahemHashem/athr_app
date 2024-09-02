@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:athr_app/constants.dart';
+import 'package:athr_app/services/post_login_service.dart';
 import 'package:athr_app/widgets/custom_button.dart';
 import 'package:athr_app/widgets/custom_form_field.dart';
 import 'package:athr_app/widgets/top.dart';
@@ -49,7 +50,10 @@ class SignInView extends StatelessWidget {
               CustomButton(
                 buttomText: 'الدخول',
                 onTap: () {
-                  if (formKey.currentState!.validate()) {}
+                  if (formKey.currentState!.validate()) {
+                    PostLoginService().login(email: 'zizorezk@gmail.com', password: '123456789', context: context);
+                    print('object');
+                  }
                 },
               ),
               // ليس لديك حساب

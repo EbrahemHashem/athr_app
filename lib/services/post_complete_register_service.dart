@@ -1,7 +1,7 @@
 import 'package:athr_app/constants.dart';
 import 'package:http/http.dart' as http;
 
-class GetCompleteRegisterService {
+class PostCompleteRegisterService {
   Future<void> completeRegister(
       {required String fName,
       required String lName,

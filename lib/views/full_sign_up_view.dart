@@ -77,7 +77,7 @@ class FullSignUp extends StatelessWidget {
                 buttomText: 'تأكيد',
                 onTap: () {
                   if (formKey.currentState!.validate()) {
-                    Navigator.pushReplacementNamed(context, 'HomePage');
+                    // Navigator.pushReplacementNamed(context, 'HomePage');
                   }
                 },
               ),
