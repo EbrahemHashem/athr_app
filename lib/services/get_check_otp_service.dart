@@ -16,7 +16,7 @@ class GetCheckOtpService {
       print('Mesaage : ${sendOtpResponse.message}');
       print('Status : ${sendOtpResponse.status}');
       print('Email : ${sendOtpResponse.data.email}');
-      // Navigator.pushReplacementNamed(context, 'FullSignUp');
+      Navigator.pushReplacementNamed(context, 'FullSignUp');
     } else {
       print('Request failed with status: ${response.body}.');
     }

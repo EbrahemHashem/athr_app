@@ -26,7 +26,11 @@ class PostLoginService {
 
       Navigator.pushReplacementNamed(context, 'HomePage');
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("your email or password is not correct")));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+        "your email or password is not correct",
+        style: TextStyle(color: Colors.red),
+      )));
       print('request failed with status : ${response.statusCode}');
     }
   }

@@ -1,12 +1,21 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:athr_app/services/get_check_otp_service.dart';
 import 'package:athr_app/widgets/custom_button.dart';
 import 'package:athr_app/widgets/custom_verification_code.dart';
 import 'package:flutter/material.dart';
 
-class ActivitionCodeView extends StatelessWidget {
-  ActivitionCodeView({super.key});
+class ActivitionCodeView extends StatefulWidget {
+  final String email;
+  ActivitionCodeView({super.key, required this.email});
+
+  @override
+  State<ActivitionCodeView> createState() => _ActivitionCodeViewState();
+}
+
+class _ActivitionCodeViewState extends State<ActivitionCodeView> {
   GlobalKey<FormState> formKey = GlobalKey();
+  late List<String> otp;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +49,13 @@ class ActivitionCodeView extends StatelessWidget {
                   ),
                 ),
               ),
-              const CustomVerificationCode(),
+              CustomVerificationCode(
+                onChangedLastItem: (otp) {
+                  setState(() {
+                    this.otp = otp;
+                  });
+                },
+              ),
 
               //button
               CustomButton(
@@ -48,8 +63,8 @@ class ActivitionCodeView extends StatelessWidget {
                 onTap: () {
                   // final otp = txt1.tostring + ;
                   if (formKey.currentState!.validate()) {
-                    // GetCheckOtpService().checkOtp(email: email, otp: otp, context: context);
-                    Navigator.pushReplacementNamed(context, 'FullSignUp');
+                    _checkOtp(widget.email ?? "");
+                    // Navigator.pushReplacementNamed(context, 'FullSignUp');
                   }
                 },
               ),
@@ -87,5 +102,12 @@ class ActivitionCodeView extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _checkOtp(String email) {
+    String otpAsString = otp.join(); // true
+    int otpAsInt = int.parse(otpAsString);
+
+    GetCheckOtpService().checkOtp(email: email, otp: otpAsInt, context: context);
   }
 }

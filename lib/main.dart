@@ -19,11 +19,22 @@ class AthrApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case 'ActivitionCodeView':
+            final args = settings.arguments as String; // Replace YourDataType with the actual type
+            return MaterialPageRoute(
+              builder: (context) => ActivitionCodeView(email: args),
+            );
+          default:
+            return null;
+        }
+      },
       routes: {
         'SignUpView': (context) => SignUpView(),
         'SignInView': (context) => SignInView(),
         'ForgetPassword': (context) => ForgetPassword(),
-        'ActivitionCodeView': (context) => ActivitionCodeView(),
+        // 'ActivitionCodeView': (context) => ActivitionCodeView(),
         'NewPassword': (context) => NewPassword(),
         'FullSignUp': (context) => FullSignUp(),
         'HomePage': (context) => const HomePage(),
