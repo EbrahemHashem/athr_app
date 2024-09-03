@@ -1,3 +1,4 @@
+import 'package:athr_app/models/product_model.dart';
 import 'package:athr_app/widgets/home%20page/custom_product.dart';
 import 'package:flutter/material.dart';
 
@@ -11,9 +12,12 @@ class CustomProducts extends StatelessWidget {
       height: 350,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: 4,
+          itemCount: TestingData.productList.length,
           itemBuilder: (context, index) {
-            return Container(margin: EdgeInsets.only(left: 10), child: CustomProduct());
+            return Container(
+              margin: EdgeInsets.only(left: 10),
+              child: CustomProduct(item: TestingData.productList[index]),
+            );
           }),
     );
   }

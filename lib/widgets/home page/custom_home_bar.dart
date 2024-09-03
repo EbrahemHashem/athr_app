@@ -5,29 +5,32 @@ class CustomHomeBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: [
-            Padding(
-              padding: EdgeInsets.only(right: 10),
-              child: Icon(
-                Icons.wechat_sharp,
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(right: 10),
+                child: Icon(
+                  Icons.wechat_sharp,
+                  size: 28,
+                ),
+              ),
+              Icon(
+                Icons.search,
                 size: 28,
               ),
-            ),
-            Icon(
-              Icons.search,
-              size: 28,
-            ),
-          ],
-        ),
-        Text(
-          'مرحبا , اسم المستخدم',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-      ],
+            ],
+          ),
+          Text(
+            'مرحبا , اسم المستخدم',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
     );
   }
 }

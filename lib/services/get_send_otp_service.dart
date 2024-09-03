@@ -31,7 +31,13 @@ class GetSendOtp {
         print('Request failed with status: ${response.statusCode}.');
       }
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("your email is already sign up")));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+        "your email is already sign up",
+        style: TextStyle(
+          color: Colors.red,
+        ),
+      )));
       print('request failed with status : ${postresponse.statusCode}');
     }
   }

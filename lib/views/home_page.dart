@@ -16,14 +16,20 @@ class HomePage extends StatelessWidget {
       bottomNavigationBar: CustomButtomNavigationBar(),
       body: Padding(
         padding: const EdgeInsets.only(right: 15, left: 15, top: 30),
-        child: ListView(children: [
+        child: Column(children: [
           CustomHomeBar(),
-          CustomHorizontalSlide(),
-          CustomGridView(),
-          CustomRow(text1: 'الأكثر مبيعا', text2: 'أكثر منتجاتنا تحقيقا للمبيعات'),
-          CustomProducts(),
-          CustomRow(text1: 'فتحات التكييف الألومنيوم', text2: 'مبيعات فتحات التكييف الألومنيوم المتاحة لدينا'),
-          CustomProducts(),
+          Expanded(
+            child: ListView(
+              children: [
+                CustomHorizontalSlide(),
+                CustomGridView(),
+                CustomRow(text1: 'الأكثر مبيعا', text2: 'أكثر منتجاتنا تحقيقا للمبيعات'),
+                CustomProducts(),
+                CustomRow(text1: 'فتحات التكييف الألومنيوم', text2: 'مبيعات فتحات التكييف الألومنيوم المتاحة لدينا'),
+                CustomProducts(),
+              ],
+            ),
+          ),
         ]),
       ),
     );

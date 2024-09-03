@@ -1,10 +1,14 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:athr_app/constants.dart';
+import 'package:athr_app/models/product_model.dart';
 import 'package:flutter/material.dart';
 
 class CustomProduct extends StatefulWidget {
-  CustomProduct({super.key});
+  final ProductModel item;
+
+  CustomProduct({super.key, required this.item});
+
   // String image;
   // String text;
   @override
@@ -19,91 +23,114 @@ class _CustomProductState extends State<CustomProduct> {
         onTap: () {},
         child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Container(
-            width: 175,
+            width: MediaQuery.of(context).size.width / 2 - 24,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               color: kColor,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                // image
-                Center(child: Image.asset('assets/images/1.png')),
-                // title
-                Text(
-                  maxLines: 2,
-                  'مكيف كاسيت جري 1.5 حصان',
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17,
-                  ),
-                ),
-                // image greee
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8),
-                  child: Image.asset(
-                    'assets/images/gree.png',
-                  ),
-                ),
-                // description
-                Text(
-                  maxLines: 2,
-                  'هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما  ',
-                  style: TextStyle(fontSize: 10, color: Color(0xff878383)),
-                  textAlign: TextAlign.right,
-                ),
-                // price
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 8),
-                  child: Text(
-                    'ر.س 2750',
-                    strutStyle: StrutStyle(),
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  // image
+                  Expanded(child: Center(child: Image.asset(widget.item.image))),
+                  // title
+                  Text(
+                    maxLines: 2,
+                    widget.item.title,
+                    textAlign: TextAlign.right,
                     style: TextStyle(
-                      fontSize: 15,
+                      overflow: TextOverflow.ellipsis,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xffCA7009),
+                      fontSize: 17,
                     ),
                   ),
-                ),
-                // buttton
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Icon(
-                      Icons.favorite_outline,
-                      size: 30,
+                  // image greee
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 12),
+                    child: Image.asset(
+                      widget.item.brandImage,
+                      // ,
                     ),
-                    GestureDetector(
-                        child: Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(35),
-                        border: Border.all(
-                          color: Color.fromRGBO(29, 117, 177, 0.23),
-                        ),
+                  ),
+
+                  // description
+                  Text(
+                    maxLines: 2,
+                    widget.item.description,
+                    style: TextStyle(fontSize: 10, color: Color(0xff878383)),
+                    textAlign: TextAlign.right,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  // price
+
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8),
+                    child: Text(
+                      widget.item.price,
+                      strutStyle: StrutStyle(),
+                      style: TextStyle(
+                        overflow: TextOverflow.ellipsis,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xffCA7009),
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(
-                            'أضف للعربة',
-                            style: TextStyle(
-                              color: Color.fromRGBO(29, 117, 177, 1),
-                              fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  // Spacer(),
+                  // buttton
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(
+                        Icons.favorite_outline,
+                        size: 28,
+                      ),
+                      SizedBox(
+                        height: 12,
+                      ),
+                      Expanded(
+                        child: GestureDetector(
+                            child: Container(
+                          padding: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(35),
+                            border: Border.all(
+                              color: Color.fromRGBO(29, 117, 177, 0.23),
                             ),
                           ),
-                          Icon(
-                            Icons.shopping_cart,
-                            size: 25,
-                            color: Color.fromRGBO(29, 117, 177, 1),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  'أضف للعربة',
+                                  style: TextStyle(
+                                      overflow: TextOverflow.ellipsis,
+                                      color: Color.fromRGBO(29, 117, 177, 1),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12),
+                                ),
+                              ),
+                              Icon(
+                                Icons.shopping_cart,
+                                size: 20,
+                                color: Color.fromRGBO(29, 117, 177, 1),
+                              ),
+                            ],
                           ),
-                        ],
+                        )),
                       ),
-                    )),
-                  ],
-                )
-              ],
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ]),
