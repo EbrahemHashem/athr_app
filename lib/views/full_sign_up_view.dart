@@ -1,12 +1,28 @@
 // ignore_for_file: must_be_immutable
 
+import 'dart:core';
+
+import 'package:athr_app/services/post_complete_register_service.dart';
 import 'package:athr_app/widgets/custom_button.dart';
 import 'package:athr_app/widgets/custom_form_field_without_icon.dart';
 import 'package:flutter/material.dart';
 
-class FullSignUp extends StatelessWidget {
+class FullSignUp extends StatefulWidget {
   FullSignUp({super.key});
+
+  @override
+  State<FullSignUp> createState() => _FullSignUpState();
+}
+
+class _FullSignUpState extends State<FullSignUp> {
   GlobalKey<FormState> formKey = GlobalKey();
+
+  String? firstName;
+  String? lastName;
+  String? phone;
+  String? password;
+  String? passwordConfirm;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,27 +62,48 @@ class FullSignUp extends StatelessWidget {
               ),
               // first name
               CustomFormFieldWithoutIcon(
+                onChanged: (data) {
+                  firstName = data;
+                },
                 textInput: TextInputType.name,
                 hintText: 'الاسم الأول',
               ),
               // last name
               CustomFormFieldWithoutIcon(
+                onChanged: (data) {
+                  lastName = data;
+                },
                 textInput: TextInputType.name,
                 hintText: 'الاسم الأخير',
               ),
               //phone number
               CustomFormFieldWithoutIcon(
+                onChanged: (data) {
+                  phone = data;
+                },
                 textInput: TextInputType.number,
                 hintText: 'رقم الجوال',
               ),
               // password
               CustomFormFieldWithoutIcon(
+                onChanged: (data) {
+                  password = data;
+                },
                 textInput: TextInputType.visiblePassword,
                 hintText: 'كلمة المرور',
                 preIcon: Icons.visibility_outlined,
               ),
-              // password
+              // password confirmatiton
               CustomFormFieldWithoutIcon(
+                validator: (value) {
+                  if (value!.isEmpty || value != password) {
+                    return 'Please enter the same password as above';
+                  }
+                  return null;
+                },
+                onChanged: (data) {
+                  passwordConfirm = data;
+                },
                 textInput: TextInputType.visiblePassword,
                 hintText: 'تأكيد كلمة المرور',
                 preIcon: Icons.visibility_outlined,
@@ -77,6 +114,14 @@ class FullSignUp extends StatelessWidget {
                 buttomText: 'تأكيد',
                 onTap: () {
                   if (formKey.currentState!.validate()) {
+                    PostCompleteRegisterService().completeRegister(
+                      fName: firstName!,
+                      lName: lastName!,
+                      phone: phone!,
+                      password: password!,
+                      passwordConfirm: passwordConfirm!,
+                      context: context,
+                    );
                     // Navigator.pushReplacementNamed(context, 'HomePage');
                   }
                 },

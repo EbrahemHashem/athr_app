@@ -18,6 +18,7 @@ class GetCheckOtpService {
       print('Email : ${sendOtpResponse.data.email}');
       Navigator.pushReplacementNamed(context, 'FullSignUp');
     } else {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Wrong Otp ,please try again")));
       print('Request failed with status: ${response.body}.');
     }
   }

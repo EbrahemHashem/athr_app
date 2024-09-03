@@ -11,12 +11,14 @@ class CustomFormFieldWithoutIcon extends StatefulWidget {
     required this.hintText,
     this.preIcon,
     this.onTap,
+    this.validator,
   });
   String hintText;
   void Function()? onTap;
   TextInputType textInput;
   IconData? preIcon;
   Function(String)? onChanged;
+  String? Function(String?)? validator;
 
   @override
   State<CustomFormFieldWithoutIcon> createState() => _CustomFormFieldWithoutIconState();
@@ -30,12 +32,13 @@ class _CustomFormFieldWithoutIconState extends State<CustomFormFieldWithoutIcon>
         padding: const EdgeInsets.symmetric(vertical: 15),
         child: TextFormField(
           textAlign: TextAlign.right,
-          validator: (data) {
-            if (data!.isEmpty) {
-              return 'الحقل مطلوب';
-            }
-            return null;
-          },
+          validator: widget.validator ??
+              (data) {
+                if (data!.isEmpty) {
+                  return 'الحقل مطلوب';
+                }
+                return null;
+              },
           onChanged: widget.onChanged,
           keyboardType: widget.textInput,
           decoration: InputDecoration(
